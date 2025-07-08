@@ -1,0 +1,76 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    overflow-x: hidden;
+}
+
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.deco-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: url('https://png.pngtree.com/png-clipart/20230922/original/pngtree-cute-hand-drawn-hearts-background-png-image_13096436.png') repeat center center;
+    opacity: 0.13;
+    animation: heartsMove 18s linear infinite;
+}
+
+@keyframes heartsMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+}
+
+.mensaje-llamativo {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.92);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    max-width: 480px;
+    text-align: center;
+    border: 3px solid #f67280;
+    margin: 2rem 1rem;
+    animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.mensaje-llamativo h1 {
+    color: #f67280;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 8px #fff, 0 4px 24px #fbc2eb;
+    letter-spacing: 1px;
+    font-weight: 700;
+    animation: shine 2.5s infinite alternate;
+}
+.mensaje-llamativo p {
+    color: #333;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+}
+@keyframes popIn {
+    0% { transform: scale(0.7) translateY(60px); opacity: 0; }
+    80% { transform: scale(1.05) translateY(-10px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+@keyframes shine {
+    0% { text-shadow: 0 2px 8px #fff, 0 4px 24px #fbc2eb; }
+    100% { text-shadow: 0 2px 16px #fff, 0 4px 32px #f67280; }
+}
+
